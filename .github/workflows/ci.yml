@@ -5,7 +5,12 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
-
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to run against'
+        required: false
+        default: 'test'
 jobs:
   build:
     runs-on: ubuntu-latest
